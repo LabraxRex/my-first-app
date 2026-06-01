@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #f0eef5;
+      --surface: #ffffff;
+      --border: #ddd8eb;
+      --purple: #7c3aed;
+      --purple-dim: #6d28d9;
+      --text: #1a1a2e;
+      --text-muted: #6b6b7a;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    main {
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple-dim), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+
+    h1 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 span {
+      color: var(--purple);
+    }
+
+    .bio {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+
+    .divider {
+      width: 2rem;
+      height: 2px;
+      background: var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 0.875rem;
+      padding: 0.875rem 1.125rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1.125rem;
+      font-weight: 500;
+      transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+
+    .link:hover {
+      border-color: var(--purple);
+      background: #ede8fa;
+      color: var(--purple);
+    }
+
+    .link:hover .link-icon {
+      color: var(--purple);
+    }
+
+    .link-icon {
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: color 0.18s ease;
+    }
+
+    .link-label {
+      flex: 1;
+    }
+
+    .link-arrow {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      transition: color 0.18s ease;
+    }
+
+    .link:hover .link-arrow {
+      color: var(--purple);
+    }
+
+    .projects {
+      margin-top: 3rem;
+    }
+
+    .projects h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .project-card {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--purple);
+      background: #ede8fa;
+    }
+
+    .project-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .project-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .project-name {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .project-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 480px) {
+      body {
+        align-items: flex-start;
+        padding: 3rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="avatar">A</div>
+
+    <h1>Hi, I'm <span>Alex</span></h1>
+    <p class="bio">building things with AI</p>
+
+    <div class="divider"></div>
+
+    <nav class="links">
+      <a class="link" href="https://twitter.com/kacie" target="_blank" rel="noopener noreferrer">
+        <svg class="link-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+        <span class="link-label">Twitter</span>
+        <span class="link-arrow">↗</span>
+      </a>
+
+      <a class="link" href="https://github.com/kacie" target="_blank" rel="noopener noreferrer">
+        <svg class="link-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+        </svg>
+        <span class="link-label">GitHub</span>
+        <span class="link-arrow">↗</span>
+      </a>
+    </nav>
+
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <div class="project-icon">🎨</div>
+          <div class="project-info">
+            <span class="project-name">Art</span>
+            <span class="project-desc">Creative works & visual experiments</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">📷</div>
+          <div class="project-info">
+            <span class="project-name">Pics</span>
+            <span class="project-desc">Photography & moments captured</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">🚀</div>
+          <div class="project-info">
+            <span class="project-name">Entrepreneur</span>
+            <span class="project-desc">Ideas & ventures in the making</span>
+          </div>
+        </div>
+        <a class="project-card" href="travels/index.html">
+          <div class="project-icon">🌍</div>
+          <div class="project-info">
+            <span class="project-name">Travels</span>
+            <span class="project-desc">Places explored around the world</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer>© 2026 Alex</footer>
+  </main>
+</body>
+</html>
